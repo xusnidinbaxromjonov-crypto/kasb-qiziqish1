@@ -38,16 +38,16 @@ export default function AdminDashboard() {
   const handleLogout = async () => {
     if (localStorage.getItem('admin_token') === 'mock_token') {
       localStorage.removeItem('admin_token');
-      navigate('/admin');
+      navigate('/');
       return;
     }
 
     if (!import.meta.env.VITE_SUPABASE_URL) {
-      navigate('/admin');
+      navigate('/');
       return;
     }
     await supabase.auth.signOut();
-    navigate('/admin');
+    navigate('/');
   };
 
   const fetchStudents = async () => {
